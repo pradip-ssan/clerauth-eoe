@@ -67,7 +67,7 @@ export const getCurrentUser = cache(async (): Promise<SafeUser | null> => {
     },
     {
       upsert: true,
-      new: true,
+      returnDocument: "after",
       runValidators: true,
       setDefaultsOnInsert: true,
     },

@@ -17,7 +17,7 @@ async function DashboardContent() {
 
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-bold text-gray-900">
+      <h1 className="text-2xl font-bold text-gray-200">
         Your Personal Dashboard
       </h1>
       <div className="p-4 bg-white border rounded-lg shadow-sm">
@@ -25,7 +25,10 @@ async function DashboardContent() {
           Welcome back,{" "}
           <span className="font-semibold">{dbUser?.firstName || "User"}</span>!
         </p>
-        <p className="text-sm text-gray-400 mt-1">Clerk User ID: {userId}</p>
+
+        <p className="mt-4  text-gray-400 ">
+          Your role: <strong>{dbUser?.role}</strong>
+        </p>
       </div>
     </div>
   );

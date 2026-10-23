@@ -38,7 +38,7 @@ export async function updateUserRole(input: unknown) {
         isActive: true,
       },
       { $set: { role: parsed.data.role } },
-      { new: true, runValidators: true },
+      { returnDocument: "after", runValidators: true },
     ).select("clerkId role");
 
     if (!target) {
